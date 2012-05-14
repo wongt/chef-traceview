@@ -5,6 +5,7 @@
 # - tracelytics::apt for Ubuntu/Debian distributions
 # - tracelytics::apache for Apache instrumentation
 # - tracelytics::python for Python instrumentation
+# - tracelytics::ruby for Ruby instrumentation
 
 # For now, we assume you're on a Debian/Ubuntu system. If you are not
 # this recipe will fail horribly.

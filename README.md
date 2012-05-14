@@ -62,6 +62,11 @@ python
 
 Uses `pip` to install the `oboe` Python package.
 
+ruby
+----
+
+Uses `rvm` to install the `oboe` and `oboe_fu` gems.
+
 mysql
 -----
 
