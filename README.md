@@ -25,9 +25,10 @@ Tested on CentOS 6. RHEL and Fedora are not currently tested but should work wit
 Cookbooks
 ---------
 
-* [apt](https://github.com/opscode-cookbooks/apt)
+* [apt](https://github.com/opscode-cookbooks/apt) is only required if you are on a Debian-like system.
 * [apache2](https://github.com/opscode-cookbooks/apache2) is only required if you are using the `tracelytics::apache` recipe.
 * [python](https://github.com/opscode-cookbooks/python) is only required if you are using the `tracelytics::python` recipe.
+* [yum](https://github.com/opscode-cookbooks/yum) is only required if you are on a Red Hat-like system.
 
 Attributes
 ==========
