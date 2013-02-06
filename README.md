@@ -16,14 +16,18 @@ Platform
 
 * Debian, Ubuntu
 
-Tested on Ubuntu 10.04.3 LTS (Lucid). RHEL, CentOS, and Fedora are not currently supported, but could be with little effort.
+Tested on Ubuntu 10.04.3 LTS (Lucid) and 12.04.1 LTS (Precise).
+
+* RHEL, CentOS, and Fedora
+
+These flavors of Linux are not currently supported, but this pull request may work: https://github.com/sprintly/tracelytics-chef/pull/1
 
 Cookbooks
 ---------
 
-* [apache2](https://github.com/opscode-cookbooks/apache2)
 * [apt](https://github.com/opscode-cookbooks/apt)
-* [python](https://github.com/opscode-cookbooks/python)
+* [apache2](https://github.com/opscode-cookbooks/apache2) is only required if you are using the `tracelytics::apache` recipe.
+* [python](https://github.com/opscode-cookbooks/python) is only required if you are using the `tracelytics::python` recipe.
 
 Attributes
 ==========
@@ -52,6 +56,8 @@ apache
 
 Installs `libapache2-mod-oboe` and configures your `/etc/apache2/mods-available/oboe.conf`.
 
+Requires the `apache2` cookbook (not a dependency of this cookbook).
+
 apt
 ---
 
@@ -61,6 +67,8 @@ python
 ------
 
 Uses `pip` to install the `oboe` Python package.
+
+Requires the `python` cookbook (not a dependency of this cookbook).
 
 mysql
 -----
