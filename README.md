@@ -18,16 +18,17 @@ Platform
 
 Tested on Ubuntu 10.04.3 LTS (Lucid) and 12.04.1 LTS (Precise).
 
-* RHEL, CentOS, and Fedora
+* CentOS, RHEL, and Fedora
 
-These flavors of Linux are not currently supported, but this pull request may work: https://github.com/sprintly/tracelytics-chef/pull/1
+Tested on CentOS 6. RHEL and Fedora are not currently tested but should work with the same components as CentOS.
 
 Cookbooks
 ---------
 
-* [apt](https://github.com/opscode-cookbooks/apt)
+* [apt](https://github.com/opscode-cookbooks/apt) is only required if you are on a Debian-like system.
 * [apache2](https://github.com/opscode-cookbooks/apache2) is only required if you are using the `tracelytics::apache` recipe.
 * [python](https://github.com/opscode-cookbooks/python) is only required if you are using the `tracelytics::python` recipe.
+* [yum](https://github.com/opscode-cookbooks/yum) is only required if you are on a Red Hat-like system.
 
 Attributes
 ==========
@@ -61,7 +62,7 @@ Requires the `apache2` cookbook (not a dependency of this cookbook).
 apt
 ---
 
-Configures the Tracelytics repository and installs their packaging key.
+Configures the Tracelytics repository and installs their packaging key for apt based systems.
 
 python
 ------
@@ -74,3 +75,8 @@ mysql
 -----
 
 **NOTE:** This recipe is currently not working. It is recommended you build the package manually and add it to your own apt repository. Downloads the MySQL client library patch from Tracelytics and builds a Debian package with the modified source. Installs the package after a successful build, but will not run again after the initial build.
+
+yum
+---
+
+Configures the tracelytics repository and installs the packaging key for yum based systems.
