@@ -20,10 +20,7 @@ template "/etc/apache2/mods-available/oboe.conf" do
         :sampling_rate => sampling_rate
     )
     action :create
-end
-
-service "apache2" do
-    action :reload
+    notifies :restart, "service[apache2]", :delayed
 end
 
 if node['tracelytics']['appname']
