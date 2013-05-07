@@ -1,3 +1,5 @@
+include_recipe "tracelytics::default"
+
 package "php-oboe" do
     action :install
 end

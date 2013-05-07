@@ -1,3 +1,5 @@
+include_recipe "tracelytics::default"
+
 package "libapache2-mod-oboe" do
     action :install
 end

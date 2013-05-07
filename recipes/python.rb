@@ -1,3 +1,5 @@
+include_recipe "tracelytics::default"
+
 include_recipe "python"
 
 python_pip "oboe" do

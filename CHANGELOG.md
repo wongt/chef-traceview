@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of tracelytics.
 
+## 0.0.6
+* tracelytics::apache queues apache2 restart
+* tracelytics::php, tracelytics::python and atracelytics::apache now include tracelytics::default
+
 ## 0.0.5
 * tracelytics::php recipe for PHP instrumentation
 
