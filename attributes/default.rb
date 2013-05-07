@@ -1,5 +1,28 @@
-# Tracelytics app name; if not set, hostname will not be registered with app
-default['tracelytics']['appname'] = nil
+#
+# Apache instrumentation
+#
+
+# cookbook and template to use for /etc/apache2/mods-available/oboe.conf
+default['tracelytics']['apache']['cookbook'] = "tracelytics"
+default['tracelytics']['apache']['template'] = "etc/apache2/mods-available/oboe.conf.erb"
+
+# Tracelytics Apache layer application name; if not set, Apache layer will not be registered 
+# with an app as a starting point for this host
+#
+# WARNING: do not assign the same appname as other layers
+default['tracelytics']['apache']['appname'] = nil
+
+# OboeTracingMode When traces should be initiated for incoming requests. Valid 
+# options are "always", "through" (when the request is initiated with a tracing 
+# header from upstream) and "never". 
+# You must set this directive to "always" in order to initiate tracing.
+default['tracelytics']['apache']['tracing_mode'] = 'always'
+
+# OboeSamplingRate This value reflects the number of requests out of every million 
+# that will be traced, and must be an integer between 0 and 1000000. 
+# Default is 300000 (30%).
+default['tracelytics']['apache']['sampling_rate'] = 300000
+
 
 #
 # PHP instrumentation

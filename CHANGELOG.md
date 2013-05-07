@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of tracelytics.
 
+## 0.0.7
+* customizable apache oboe.conf template, cleaner default attributes 
+
 ## 0.0.6
 * tracelytics::apache queues apache2 restart
 * tracelytics::php, tracelytics::python and atracelytics::apache now include tracelytics::default
