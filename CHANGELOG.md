@@ -2,6 +2,9 @@
 
 This file is used to list changes made in each version of tracelytics.
 
+## 0.0.5
+* tracelytics::php recipe for PHP instrumentation
+
 ## 0.0.4
 * register hostname with tracelytics app via node['tracelytics']['appname']
 
