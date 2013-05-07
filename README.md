@@ -46,11 +46,11 @@ apache
 
 php
 ---
-* `node['tracelytics']['php']['appname']`
-* `node['tracelytics']['php']['tracing']`
-* `node['tracelytics']['php']['sample_rate']`
-* `node['tracelytics']['php']['enable_sanitize_sql']`
-* `node['tracelytics']['php']['enable_wrap_error_log']`
+* `node['tracelytics']['php']['appname']` *optional* Tracelytics PHP layer application name
+* `node['tracelytics']['php']['tracing']` *optional* Sets when traces should be initiated. Valid values are `always`, `through`, and `never`. Defaults to `through`. [More](http://support.tv.appneta.com/kb/php/custom-instrumenting-php-apps#configuration-options)
+* `node['tracelytics']['php']['sample_rate']` *optional* The number of requests out of every million that will be traced. Defaults to `300000`. [More](http://support.tv.appneta.com/kb/php/custom-instrumenting-php-apps#configuration-options)
+* `node['tracelytics']['php']['enable_sanitize_sql']` *optional* Enable or disable sanitizing SQL query traces. Disabled by default. [More](http://support.tv.appneta.com/kb/php/custom-instrumenting-php-apps#configuration-options)
+* `node['tracelytics']['php']['enable_wrap_error_log']` *optional* By setting this value to 0, you will prevent error_log messages from showing up on our Errors page, improving the signal-to-noise ratio. Default is 1 (ie. enabled). [More](http://support.tv.appneta.com/kb/php/custom-instrumenting-php-apps#configuration-options)
 
 Recipes
 =======
