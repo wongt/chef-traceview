@@ -40,9 +40,17 @@ default
 
 apache
 ------
+* `node['tracelytics']['apache']['appname']` **optional** Tracelytics Apache layer application name
+* `node['tracelytics']['apache']['trace_mode']` **optional** Sets when traces should be initiated. Valid values are `always`, `through`, and `never`. Defaults to `always`. [More](http://support.tracelytics.com/kb/configuration/configuring-apache)
+* `node['tracelytics']['apache']['sampling_rate']` **optional** The number of requests out of every million that will be traced. Defaults to `300000`. [More](http://support.tracelytics.com/kb/configuration/configuring-apache)
 
-* `node['tracelytics']['trace_mode']` **optional** Sets when traces should be initiated. Valid values are `always`, `through`, and `never`. Defaults to `always`. [More](http://support.tracelytics.com/kb/configuration/configuring-apache)
-* `node['tracelytics']['sampling_rate']` **optional** The number of requests out of every million that will be traced. Defaults to `300000`. [More](http://support.tracelytics.com/kb/configuration/configuring-apache)
+php
+---
+* `node['tracelytics']['php']['appname']`
+* `node['tracelytics']['php']['tracing']`
+* `node['tracelytics']['php']['sample_rate']`
+* `node['tracelytics']['php']['enable_sanitize_sql']`
+* `node['tracelytics']['php']['enable_wrap_error_log']`
 
 Recipes
 =======
@@ -58,6 +66,11 @@ apache
 Installs `libapache2-mod-oboe` and configures your `/etc/apache2/mods-available/oboe.conf`.
 
 Requires the `apache2` cookbook (not a dependency of this cookbook).
+
+php
+---
+
+Installs `php-oboe` and configures `/etc/php5/conf.d/oboe.ini`. 
 
 apt
 ---
