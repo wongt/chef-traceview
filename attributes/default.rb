@@ -44,7 +44,7 @@ default['tracelytics']['php']['tracing'] = 'through'
 # requests out of every million that will be traced, and must be an integer 
 # between 0 and 1000000. 
 # Default is 300000 (ie. 30%).
-default['tracelytics']['php']['sample_rate'] = 30000
+default['tracelytics']['php']['sample_rate'] = 300000
 
 # Enable or disable sanitizing SQL query traces. The following values are accepted:
 # 0 - disable SQL sanitizing (default),
