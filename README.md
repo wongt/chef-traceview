@@ -40,9 +40,17 @@ default
 
 apache
 ------
+* `node['tracelytics']['apache']['appname']` **optional** Tracelytics Apache layer application name
+* `node['tracelytics']['apache']['trace_mode']` **optional** Sets when traces should be initiated. Valid values are `always`, `through`, and `never`. Defaults to `always`. [More](http://support.tracelytics.com/kb/configuration/configuring-apache)
+* `node['tracelytics']['apache']['sampling_rate']` **optional** The number of requests out of every million that will be traced. Defaults to `300000`. [More](http://support.tracelytics.com/kb/configuration/configuring-apache)
 
-* `node['tracelytics']['trace_mode']` **optional** Sets when traces should be initiated. Valid values are `always`, `through`, and `never`. Defaults to `always`. [More](http://support.tracelytics.com/kb/configuration/configuring-apache)
-* `node['tracelytics']['sampling_rate']` **optional** The number of requests out of every million that will be traced. Defaults to `300000`. [More](http://support.tracelytics.com/kb/configuration/configuring-apache)
+php
+---
+* `node['tracelytics']['php']['appname']` *optional* Tracelytics PHP layer application name
+* `node['tracelytics']['php']['tracing']` *optional* Sets when traces should be initiated. Valid values are `always`, `through`, and `never`. Defaults to `through`. [More](http://support.tv.appneta.com/kb/php/custom-instrumenting-php-apps#configuration-options)
+* `node['tracelytics']['php']['sample_rate']` *optional* The number of requests out of every million that will be traced. Defaults to `300000`. [More](http://support.tv.appneta.com/kb/php/custom-instrumenting-php-apps#configuration-options)
+* `node['tracelytics']['php']['enable_sanitize_sql']` *optional* Enable or disable sanitizing SQL query traces. Disabled by default. [More](http://support.tv.appneta.com/kb/php/custom-instrumenting-php-apps#configuration-options)
+* `node['tracelytics']['php']['enable_wrap_error_log']` *optional* By setting this value to 0, you will prevent error_log messages from showing up on our Errors page, improving the signal-to-noise ratio. Default is 1 (ie. enabled). [More](http://support.tv.appneta.com/kb/php/custom-instrumenting-php-apps#configuration-options)
 
 Recipes
 =======
@@ -58,6 +66,11 @@ apache
 Installs `libapache2-mod-oboe` and configures your `/etc/apache2/mods-available/oboe.conf`.
 
 Requires the `apache2` cookbook (not a dependency of this cookbook).
+
+php
+---
+
+Installs `php-oboe` and configures `/etc/php5/conf.d/oboe.ini`. 
 
 apt
 ---

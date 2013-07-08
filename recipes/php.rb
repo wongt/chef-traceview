@@ -1,20 +1,19 @@
 include_recipe "tracelytics::default"
 
-package "libapache2-mod-oboe" do
+package "php-oboe" do
     action :install
 end
 
-template "/etc/apache2/mods-available/oboe.conf" do
-    cookbook node['tracelytics']['apache']['cookbook']
-    source node['tracelytics']['apache']['template']
+template "/etc/php5/conf.d/oboe.ini" do
+    source "oboe.ini.erb"
     mode "0644"
     owner "root"
     group "root"
-    notifies :reload, "service[apache2]", :delayed
+    notifies :restart, "service[apache2]", :delayed
 end
 
-if node['tracelytics']['appname']
-ruby_block "register tracelytics app" do
+if node['tracelytics']['php']['appname']
+ruby_block "register PHP layer with tracelytics app" do
   block do
     require 'rest-client'
     
@@ -22,8 +21,8 @@ ruby_block "register tracelytics app" do
       response = RestClient.post('https://api.tracelytics.com/api-v1/assign_app', {
         :key => node['tracelytics']['access_key'],
         :hostname => node['hostname'],
-        :appname => node['tracelytics']['appname'],
-        :layer => "apache"
+        :appname => node['tracelytics']['php']['appname'],
+        :layer => "PHP"
       })
       
       Chef::Log.debug("register POST request response: #{response}")
