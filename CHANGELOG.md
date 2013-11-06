@@ -2,6 +2,13 @@
 
 This file is used to list changes made in each version of the TraceView cookbook.
 
+## 0.0.8
+* Removed the deprecated MySQL client recipe.
+* Rebrand cookbook to TraceView.
+* Add James Meickle at AppNeta (jmeickle@appneta.com) as a maintainer.
+* Update various descriptions.
+* Update URLs.
+
 ## 0.0.7
 * customizable apache oboe.conf template, cleaner default attributes
 
