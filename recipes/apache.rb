@@ -17,7 +17,7 @@ if node['traceview']['appname']
 ruby_block "register traceview app" do
   block do
     require 'rest-client'
-    
+
     begin
       response = RestClient.post('https://api.tv.appneta.com/api-v1/assign_app', {
         :key => node['traceview']['access_key'],
@@ -25,7 +25,7 @@ ruby_block "register traceview app" do
         :appname => node['traceview']['appname'],
         :layer => "apache"
       })
-      
+
       Chef::Log.debug("register POST request response: #{response}")
     rescue RestClient::Exception => e
       Chef::Log.error("POST error; response body: '#{e.http_body}' response code: #{e.http_code}")

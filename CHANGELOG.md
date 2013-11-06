@@ -3,7 +3,7 @@
 This file is used to list changes made in each version of the TraceView cookbook.
 
 ## 0.0.7
-* customizable apache oboe.conf template, cleaner default attributes 
+* customizable apache oboe.conf template, cleaner default attributes
 
 ## 0.0.6
 * traceview::apache queues apache2 restart
@@ -15,7 +15,7 @@ This file is used to list changes made in each version of the TraceView cookbook
 ## 0.0.4
 * register hostname with traceview app via node['traceview']['appname']
 
-- - - 
+- - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.
 
 The [Github Flavored Markdown page](http://github.github.com/github-flavored-markdown/) describes the differences between markdown on github and standard markdown.

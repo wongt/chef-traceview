@@ -70,7 +70,7 @@ Requires the `apache2` cookbook (not a dependency of this cookbook).
 php
 ---
 
-Installs `php-oboe` and configures `/etc/php5/conf.d/oboe.ini`. 
+Installs `php-oboe` and configures `/etc/php5/conf.d/oboe.ini`.
 
 apt
 ---
