@@ -1,19 +1,19 @@
-# CHANGELOG for tracelytics
+# CHANGELOG for AppNeta TraceView
 
-This file is used to list changes made in each version of tracelytics.
+This file is used to list changes made in each version of the TraceView cookbook.
 
 ## 0.0.7
 * customizable apache oboe.conf template, cleaner default attributes 
 
 ## 0.0.6
-* tracelytics::apache queues apache2 restart
-* tracelytics::php, tracelytics::python and atracelytics::apache now include tracelytics::default
+* traceview::apache queues apache2 restart
+* traceview::php, traceview::python and traceview::apache now include traceview::default
 
 ## 0.0.5
-* tracelytics::php recipe for PHP instrumentation
+* traceview::php recipe for PHP instrumentation
 
 ## 0.0.4
-* register hostname with tracelytics app via node['tracelytics']['appname']
+* register hostname with traceview app via node['traceview']['appname']
 
 - - - 
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.

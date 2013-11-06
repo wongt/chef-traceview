@@ -1,28 +1,28 @@
-include_recipe "tracelytics::default"
+include_recipe "traceview::default"
 
 package "libapache2-mod-oboe" do
     action :install
 end
 
 template "/etc/apache2/mods-available/oboe.conf" do
-    cookbook node['tracelytics']['apache']['cookbook']
-    source node['tracelytics']['apache']['template']
+    cookbook node['traceview']['apache']['cookbook']
+    source node['traceview']['apache']['template']
     mode "0644"
     owner "root"
     group "root"
     notifies :reload, "service[apache2]", :delayed
 end
 
-if node['tracelytics']['appname']
-ruby_block "register tracelytics app" do
+if node['traceview']['appname']
+ruby_block "register traceview app" do
   block do
     require 'rest-client'
     
     begin
-      response = RestClient.post('https://api.tracelytics.com/api-v1/assign_app', {
-        :key => node['tracelytics']['access_key'],
+      response = RestClient.post('https://api.tv.appneta.com/api-v1/assign_app', {
+        :key => node['traceview']['access_key'],
         :hostname => node['hostname'],
-        :appname => node['tracelytics']['appname'],
+        :appname => node['traceview']['appname'],
         :layer => "apache"
       })
       

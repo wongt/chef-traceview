@@ -10,7 +10,7 @@ extension=oboe.so
 ; been enabled upstream) and "never". Default is "through", which
 ; assumes that the web server calling PHP will make decisions on
 ; whether to enable tracing (e.g., when sampling).
-oboe.tracing = <%= node['tracelytics']['php']['tracing'] %>
+oboe.tracing = <%= node['traceview']['php']['tracing'] %>
 
 ; oboe.enable_sanitize_sql: Enable or disable sanitizing SQL query traces using
 ; a sum of the following options:
@@ -18,12 +18,12 @@ oboe.tracing = <%= node['tracelytics']['php']['tracing'] %>
 ;  1 - enable SQL sanitizing and attempt to automatically determine which quoting form to use,
 ;  2 - enable SQL sanitizing and force dropping double quoted characters (overrides 4 and 1),
 ;  4 - enable SQL sanitizing and force retaining double quoted character (overrides 1).
-oboe.enable_sanitize_sql = <%= node['tracelytics']['php']['enable_sanitize_sql'] %>
+oboe.enable_sanitize_sql = <%= node['traceview']['php']['enable_sanitize_sql'] %>
 
 ; oboe.sample_rate: This value reflects the number of requests out
 ; of every million that will be traced, and must be an integer
 ; between 0 and 1000000. Default is 300000 (30%).
-oboe.sample_rate = <%= node['tracelytics']['php']['sample_rate'] %>
+oboe.sample_rate = <%= node['traceview']['php']['sample_rate'] %>
 
 ; oboe.collector_ip: IP address of Tracelyzer daemon. Default is localhost.
 oboe.collector_ip = 127.0.0.1
@@ -31,10 +31,10 @@ oboe.collector_ip = 127.0.0.1
 ; oboe.collector_port: Port of Tracelyzer daemon. Default is 7831.
 oboe.collector_port = 7831
 
-; oboe.enable_wrap_error_log: some applications use PHP's error_log() function as an easy way to log 
-; debugging and other messages. By setting this value to 0, you will prevent 
-; error_log messages from showing up on our Errors page, improving the 
-; signal-to-noise ratio. Other, non-error_log PHP errors (such as undefined 
-; variables, syntax errors, etc) will still be captured. 
+; oboe.enable_wrap_error_log: some applications use PHP's error_log() function as an easy way to log
+; debugging and other messages. By setting this value to 0, you will prevent
+; error_log messages from showing up on our Errors page, improving the
+; signal-to-noise ratio. Other, non-error_log PHP errors (such as undefined
+; variables, syntax errors, etc) will still be captured.
 ; Default is 1 (ie. enabled).
-oboe.enable_wrap_error_log = <%= node['tracelytics']['php']['enable_wrap_error_log'] %>
+oboe.enable_wrap_error_log = <%= node['traceview']['php']['enable_wrap_error_log'] %>

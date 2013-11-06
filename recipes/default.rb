@@ -1,16 +1,16 @@
 # This recipe only sets up your /etc/tracelytics.conf. Everything else should
 # be included in your run list depending on your distribution or stack.
-# 
+#
 # Use the recipes for your distribution/stack setup.
-# - tracelytics::apt for Ubuntu/Debian distributions
-# - tracelytics::apache for Apache instrumentation
-# - tracelytics::python for Python instrumentation
+# - traceview::apt for Ubuntu/Debian distributions
+# - traceview::apache for Apache instrumentation
+# - traceview::python for Python instrumentation
 
 case node['platform']
 when "ubuntu", "debian"
-    include_recipe "tracelytics::apt"
+    include_recipe "traceview::apt"
 when "redhat", "centos"
-    include_recipe "tracelytics::yum"
+    include_recipe "traceview::yum"
 end
 
 # Be sure to set your access_key in an environment/role/node attribute.

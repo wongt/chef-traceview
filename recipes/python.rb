@@ -1,4 +1,4 @@
-include_recipe "tracelytics::default"
+include_recipe "traceview::default"
 
 include_recipe "python"
 

@@ -1,4 +1,4 @@
-include_recipe "tracelytics::default"
+include_recipe "traceview::default"
 
 package "php-oboe" do
     action :install
@@ -12,16 +12,16 @@ template "/etc/php5/conf.d/oboe.ini" do
     notifies :restart, "service[apache2]", :delayed
 end
 
-if node['tracelytics']['php']['appname']
-ruby_block "register PHP layer with tracelytics app" do
+if node['traceview']['php']['appname']
+ruby_block "register PHP layer with TraceView" do
   block do
     require 'rest-client'
     
     begin
-      response = RestClient.post('https://api.tracelytics.com/api-v1/assign_app', {
-        :key => node['tracelytics']['access_key'],
+      response = RestClient.post('https://api.tv.appneta.com/api-v1/assign_app', {
+        :key => node['traceview']['access_key'],
         :hostname => node['hostname'],
-        :appname => node['tracelytics']['php']['appname'],
+        :appname => node['traceview']['php']['appname'],
         :layer => "PHP"
       })
       
